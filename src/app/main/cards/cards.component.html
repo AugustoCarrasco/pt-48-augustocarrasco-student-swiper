@@ -1,0 +1,41 @@
+<div class="cards-container">
+  <mat-card id="cards-swiper-container" md-color-primary>
+      <mat-card-header> Cards </mat-card-header>
+      <mat-card-content id="swiper">
+        <swiper-container
+          appSwiper
+          #swiper
+          slides-per-view="1"
+          speed="500"
+          loop="false"
+          pagination="true"
+          effect="cards"
+          grab-cursor="true"
+          [virtual]="{}"
+          [config]="swiperConfig"
+          (slideprevtransitionend)="slideChange($event)"
+        >       
+                <!-- <swiper-slide></swiper-slide> -->
+                <swiper-slide swiperSlide *ngFor="let item of listaParticipantes">
+                    <div>{{item}}</div>
+                </swiper-slide>
+                
+        </swiper-container>
+      </mat-card-content>
+  </mat-card>
+  <mat-card id="chips" md-color-primary>
+    <mat-card-content>
+      <mat-card-header> Selected participants </mat-card-header>
+      <mat-card-content>
+        <app-chips></app-chips>
+      </mat-card-content>
+      <mat-card-actions>
+        <div id="random">
+          <button mat-raised-button color="accent" routerLink="/roulette" >
+            Random from Chosen
+          </button>
+        </div>
+      </mat-card-actions>
+    </mat-card-content>
+  </mat-card>
+</div>

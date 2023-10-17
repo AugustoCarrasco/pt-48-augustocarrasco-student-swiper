@@ -1,0 +1,126 @@
+.container {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5em;
+}
+mat-card {
+  width: 80%;
+}
+#cards {
+  height: 75%;
+}
+#chips {
+  height: 20%;
+}
+
+#random {
+  position: absolute;
+  bottom: 5%;
+  right: 2%;
+}
+
+#cards-container {
+  height: 100%;
+}
+
+.rouletteChip {
+  position: absolute;
+  left: 0;
+
+  background-color: #0ca84d;
+  border-radius: 50px;
+  height: 75px;
+  font-size: 1.5em;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: chipin 2s linear forwards calc(0.3s * var(--i)) 5 normal;
+  /* animation-duration: 4s;
+  animation-delay: calc(0.3s * var(--i));
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards; */
+}
+/*  animation-name: example;
+animation-duration: 5s;
+animation-timing-function: linear;
+animation-delay: 2s;
+animation-iteration-count: infinite;
+animation-direction: alternate; */ 
+@keyframes chipin {
+  0%{
+    left:0%;
+    background-color: #0ca84d;
+  }
+ 
+  20%{
+    
+    background-color: rgb(224, 196, 36);
+  }
+  40%{
+    background-color: #f70909;
+  }
+ 
+  50% {
+    left: 80%;
+  }
+  60%{
+    background-color: rgb(225, 0, 255);
+  }
+  80%{
+    left: 0%;
+    background-color: #0c36a8;
+  }
+  90% {
+    visibility: visible;
+    opacity: 100%;
+  }
+ 
+  100%{
+    left: 40%;
+    opacity: 25%;
+  }
+}
+
+
+
+.chipsContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid red; */
+  overflow: hidden;
+}
+
+#winner-chip {
+    width: 25%;
+    height:100px;
+    border: 1px solid #7b1fa2;
+    background-color: #7b1fa2;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #9ccc65;
+    font-size: 2rem;
+    z-index: 1;
+    box-shadow: 0px 0px 30px #0ca84d;
+    animation: winner 2s 13s linear 1 normal forwards;
+    visibility: hidden;
+    opacity: 0%;
+}
+@keyframes winner {
+    0%{visibility: visible; opacity: 0%;}
+    50%{opacity: 50%;}
+    100%{opacity: 100%;visibility: visible;}
+    
+}

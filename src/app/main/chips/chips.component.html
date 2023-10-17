@@ -1,0 +1,19 @@
+<div>
+  <label>Hide chips </label>
+  <mat-slide-toggle [(ngModel)]="toggleShowing">Show chips</mat-slide-toggle>
+  <mat-chip-set *ngIf="toggleShowing">
+    <mat-chip-set
+      multiple
+      role="list"
+      id="chip-list"
+    >
+      <mat-chip selected color="accent" role="listitem" [removable]="removeInput" (removed)="removeChip(element)"
+      *ngFor="let element of listaParticipantes"
+      >{{ element }}
+        <button matChipRemove *ngIf="removeInput">
+          <mat-icon>cancel</mat-icon>
+        </button>
+      </mat-chip>
+    </mat-chip-set>
+  </mat-chip-set>
+</div>

@@ -1,0 +1,26 @@
+<div id="customize-container">
+    <mat-card md-color-primary>
+        <!-- <mat-card-content> -->
+            <mat-card-header>
+                Customization
+            </mat-card-header>
+            <mat-card-content>
+                <form #form="ngForm" id="form-entries-container" (ngSubmit)="onSubmit(form)" >
+                    <div id="form-entrie" *ngFor="let element of formLines">
+                        <p>#{{element}}</p>
+                        <mat-form-field appearance="outline" color="accent">
+                            <mat-label>Participant Name</mat-label>
+                            <input matInput placeholder="Participant Name" name=name{{element}} ngModel>
+                        </mat-form-field>
+                    </div>
+                    <div id="random">
+                        <button type="submit" mat-raised-button color="accent" >Confirm & Start</button>
+                    </div>
+                </form>
+                <button id="addButton" mat-button color="seccondary" (click)="addFormEntrie()" >Add one more line</button>
+            </mat-card-content>
+        <!-- </mat-card-content> -->
+    </mat-card>
+</div>
+
+<!-- {{ form.value | json}} -->

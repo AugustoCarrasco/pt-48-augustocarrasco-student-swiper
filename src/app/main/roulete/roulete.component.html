@@ -1,0 +1,31 @@
+<div class="container">
+    <mat-card id="cards" md-color-primary>
+        
+            <mat-card-header>
+                Roulette
+            </mat-card-header>
+            <mat-card-content id="cards-container">
+                <div  class="chipsContainer">
+                    <div class="rouletteChip" style="--i:{{indexOfElemnts+1}};" *ngFor="let element of listaParticipantes; let indexOfElemnts=index">{{element}}</div>
+                    <div id="winner-chip">{{winnerSelected}}</div>
+                </div>
+                
+            </mat-card-content>
+        
+    </mat-card>
+    <mat-card id="chips" md-color-primary>
+        <mat-card-content>
+            <mat-card-header>
+                Participants
+            </mat-card-header>
+            <mat-card-content>
+                <app-chips [removeInput]="false" ></app-chips>
+            </mat-card-content>
+            <mat-card-actions>
+                <div id="random">
+                    <button mat-raised-button color="accent" routerLink="/winner">Winner</button>
+                </div>
+            </mat-card-actions>
+        </mat-card-content>
+    </mat-card>
+</div>

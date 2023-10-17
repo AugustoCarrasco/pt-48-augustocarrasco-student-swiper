@@ -1,0 +1,24 @@
+<div style="
+width: 100%;
+height: 100%;">
+<div style="height:100%">
+    <div
+      style="
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        border: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <h2>Congratulations to the Winner!!</h2>
+      <div id="winner-chip">{{winnerSelected}}</div>
+    </div>
+    <div id="customize-button"> 
+      <button mat-raised-button color="primary" routerLink="/welcome" (click)="startOver()">Start over</button>
+    </div>
+</div>
+</div>
